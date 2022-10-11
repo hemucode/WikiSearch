@@ -1,8 +1,29 @@
 <!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+                <!-- MIT License
+    
+                Copyright (c) 2022 Hemanta Gayen
+
+                Permission is hereby granted, free of charge, to any person obtaining a copy
+                of this software and associated documentation files (the "Software"), to deal
+                in the Software without restriction, including without limitation the rights
+                to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                copies of the Software, and to permit persons to whom the Software is
+                furnished to do so, subject to the following conditions:
+
+                The above copyright notice and this permission notice shall be included in all
+                copies or substantial portions of the Software.
+
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                SOFTWARE. -->
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title>Options - Country with Wikipedia</title>
+    <title>Options - Languages with Wikipedia</title>
     <link rel="icon" type="image/png" href="../icons/16.png">
     <link rel="stylesheet" type="text/css" href="options.css">
   </head>
@@ -10,127 +31,102 @@
     <div id="content" class="flex">
       <table>
         <tr>
-          <td class="left">Country</td>
+          <td class="left">Types</td>
           <td style="white-space: nowrap">
-            <span>Choose a Target Country</span>
+            <span>Choose a types of Wiki</span>
+            <select id="TOO">
+                <option value="wikipedia" lang="en">Wikipedia</option>
+                <option value="wikivoyage" lang="en">Wikivoyage</option>
+                <option value="wiktionary" lang="en">wiktionary</option>
+                <option value="wikibooks" lang="en">Wikibooks</option>
+                <option value="wikinews" lang="en">Wikinews</option>
+                <option value="wikidata" lang="en">Wikidata</option>
+                <option value="wikiversity" lang="en">Wikiversity</option>
+                <option value="wikiquote" lang="en">Wikiquote</option>
+                <option value="mediawiki" lang="en">Mediawiki</option>
+                <option value="wikisource" lang="en">Wikisource</option>
+            </select>
+            <p class="note">Default types is Wikipedia</p>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td class="left">Language</td>
+          <td style="white-space: nowrap">
+            <span>Choose a Target Languages</span>
             <select id="TO">
-              <!-- MIT License
-  
-              Copyright (c) 2022 Hemanta Gayen
-
-              Permission is hereby granted, free of charge, to any person obtaining a copy
-              of this software and associated documentation files (the "Software"), to deal
-              in the Software without restriction, including without limitation the rights
-              to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-              copies of the Software, and to permit persons to whom the Software is
-              furnished to do so, subject to the following conditions:
-
-              The above copyright notice and this permission notice shall be included in all
-              copies or substantial portions of the Software.
-
-              THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-              IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-              FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-              AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-              LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-              OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-              SOFTWARE. -->
-              <option value=''>Select Your Country</option>
-              <option value="af">Duitse Wikipedia</option>
-              <option value="ar">ويكيبيديا الألمانية</option>
-              <option value="arz">ويكيبيديا المانى</option>
-              <option value="as">জাৰ্মান ৱিকিপিডিয়া</option>
-              <option value="az">Almanca Vikipediya</option>
-              <option value="bat-smg">Vuokėška Vikipedėjė</option>
-              <option value="ba">Немец Википедияһы</option>
-              <option value="be-tarask">Нямецкая Вікіпэдыя</option>
-              <option value="be">Нямецкая Вікіпедыя</option>
-              <option value="bg"> Уикипедия на немски език</option>
-              <option value="bn">জার্মান উইকিপিডিয়া</option>
-              <option value="bxr">Герман Википеэди</option>
-              <option value="ca">Viquipèdia en alemany</option>
-              <option value="ckb">ویکیپیدیای ئەڵمانی</option>
-              <option value="cs">Německá Wikipedie</option>
-              <option value="cv">Нимĕç Википедийĕ</option>
-              <option value="cy">Wicipedia Almaeneg</option>
-              <option value="da">Tysk Wikipedia</option>
-              <option value="de">Deutschsprachige Wikipedia</option>
-              <option value="diq">Wikipediya Almanki</option>
-              <option value="el"> Γερμανική Βικιπαίδεια</option>
-              <option value="en">German Wikipedia</option>
-              <option value="eo">Germanlingva Vikipedio</option>
-              <option value="es">Wikipedia en alemán</option>
-              <option value="et">Saksakeelne Vikipeedia</option>
-              <option value="eu">Alemanezko Wikipedia</option>
-              <option value="ext">Wikipedia en alemán</option>
-              <option value="fa">ویکیپدیای آلمانی</option>
-              <option value="fi">Saksankielinen Wikipedia</option>
-              <option value="fr">Wikipédia en allemand</option>
-              <option value="fur">Vichipedie todescje</option>
-              <option value="fy">Dútsktalige Wikipedy</option>
-              <option value="ga">Vicipéid na Gearmáinise</option>
-              <option value="gl">Wikipedia en alemán</option>
-              <option value="hak">Tet-ngî Wikipedia</option>
-              <option value="he">ויקיפדיה הגרמנית</option>
-              <option value="hi">जर्मन विकिपीडिया</option>
-              <option value="hr">Wikipedija na njemačkom jeziku</option>
-              <option value="hu">Német Wikipédia</option>
-              <option value="hy">Գերմաներեն Վիքիպեդիա</option>
-              <option value="id">Wikipedia bahasa Jerman</option>
-              <option value="it">Wikipedia in tedesco</option>
-              <option value="ja">ドイツ語版ウィキペディア</option>
-              <option value="ka">გერმანული ვიკიპედია</option>
-              <option value="kk">Немісше Уикипедия</option>
-              <option value="km">វិគីភីឌាភាសាអាល្លឺម៉ង់</option>
-              <option value="kn">ಜರ್ಮನ್ ವಿಕಿಪೀಡಿಯ</option>
-              <option value="ko">독일어 위키백과</option>
-              <option value="ks">جَرمَن وِکیٖپیٖڈیا</option>
-              <option value="ku">Wîkîpediya almanî</option>
-              <option value="ky">Немис Уикипедиясы</option>
-              <option value="ib">Wikipedia op Däitsch</option>
-              <option value="it">Vokiškoji Vikipedija</option>
-              <option value="iv">Vikipēdija vācu valodā</option>
-              <option value="map-bms">Wikipedia basa Jerman</option>
-              <option value="mk">Википедија на германски јазик</option>
-              <option value="mn">Герман Википедиа</option>
-              <option value="ms">Wikipedia Bahasa Jerman</option>
-              <option value="nl">Duitstalige Wikipedia</option>
-              <option value="no">Wikipedia på tysk</option>
-              <option value="oc">Wikipèdia en alemand</option>
-              <option value="pa">ਜਰਮਨ ਵਿਕੀਪੀਡੀਆ</option>
-              <option value="pl">Wikipedia niemieckojęzyczna</option>
-              <option value="pt">Wikipédia em alemão</option>
-              <option value="roa-tara">Uicchipèdie tedesche</option>
-              <option value="ro">Wikipedia în germană</option>
-              <option value="ru">Немецкая Википедия</option>
-              <option value="sat">ᱡᱟᱨᱢᱟᱱ ᱣᱤᱠᱤᱯᱤᱰᱤᱭᱟ</option>
-              <option value="scn">Wikipedia tudisca</option>
-              <option value="sc">Bichipedia in tedesca</option>
-              <option value="sb">جرمن وڪيپيڊيا</option>
-              <option value="sh">Njemačka Wikipedija</option>
-              <option value="simple">German Wikipedia</option>
-              <option value="sr">Википедија на немачком језику</option>
-              <option value="sv">Tyskspråkiga Wikipedia</option>
-              <option value="sw">Wikipedia ya Kijerumani</option>
-              <option value="ta">இடாய்ச்சு விக்கிப்பீடியா</option>
-              <option value="tg">Википедияи Олмонӣ</option>
-              <option value="th">วิกิพีเดียภาษาเยอรมัน</option>
-              <option value="tl">Wikipediang Aleman</option>
-              <option value="tr">Almanca Vikipedi</option>
-              <option value="tt">Алман Википедиясе</option>
-              <option value="udm">Немец Википедия</option>
-              <option value="uk">Німецька Вікіпедія</option>
-              <option value="ur"> جرمن ویکیپیڈیا</option>
-              <option value="uz">Nemischa Vikipediya</option>
-              <option value="vep">Saksankel'ne Vikipedii</option>
-              <option value="vi">Wikipedia tiếng Đức</option>
-              <option value="vo">Vükiped Deutänapükik</option>
-              <option value="wuu">德语维基百科</option>
-              <option value="xmf">გერმანული ვიკიპედია</option>
-              <option value="zh-classical">德文維基大典</option>
-              <option value="zh-min-nan">Tek-bûn Wikipedia</option>
-              <option value="zh-yue">德文維基百科</option>
-              <option value="zn">德語維基百科</option>
+                <option value="af" lang="af">Afrikaans</option>
+                <option value="pl" lang="pl">Polski</option>
+                <option value="ar" lang="ar">العربية</option><!-- Al-ʿArabīyah -->
+                <option value="ast" lang="ast">Asturianu</option>
+                <option value="az" lang="az">Azərbaycanca</option>
+                <option value="bg" lang="bg">Български</option><!-- Bǎlgarski -->
+                <option value="nan" lang="nan">Bân-lâm-gú / Hō-ló-oē</option>
+                <option value="bn" lang="bn">বাংলা</option><!-- Bangla -->
+                <option value="be" lang="be">Беларуская</option><!-- Belaruskaya -->
+                <option value="ca" lang="ca">Català</option>
+                <option value="cs" lang="cs">Čeština</option><!-- čeština -->
+                <option value="cy" lang="cy">Cymraeg</option><!-- Cymraeg -->
+                <option value="da" lang="da">Dansk</option>
+                <option value="de" lang="de">Deutsch</option>
+                <option value="et" lang="et">Eesti</option>
+                <option value="el" lang="el">Ελληνικά</option><!-- Ellīniká -->
+                <option value="en" lang="en">English</option><!-- English -->
+                <option value="es" lang="es">Español</option>
+                <option value="eo" lang="eo">Esperanto</option>
+                <option value="eu" lang="eu">Euskara</option>
+                <option value="fa" lang="fa">فارسی</option><!-- Fārsi -->
+                <option value="fr" lang="fr">Français</option><!-- français -->
+                <option value="gl" lang="gl">Galego</option>
+                <option value="ko" lang="ko">한국어</option><!-- Hangugeo -->
+                <option value="hy" lang="hy">Հայերեն</option><!-- Hayeren -->
+                <option value="hi" lang="hi">हिन्दी</option><!-- Hindī -->
+                <option value="hr" lang="hr">Hrvatski</option>
+                <option value="id" lang="id">Bahasa Indonesia</option>
+                <option value="it" lang="it">Italiano</option>
+                <option value="he" lang="he">עברית</option><!-- Ivrit -->
+                <option value="ka" lang="ka">ქართული</option><!-- Kartuli -->
+                <option value="la" lang="la">Latina</option>
+                <option value="lv" lang="lv">Latviešu</option>
+                <option value="lt" lang="lt">Lietuvių</option>
+                <option value="hu" lang="hu">Magyar</option>
+                <option value="mk" lang="mk">Македонски</option><!-- Makedonski -->
+                <option value="arz" lang="arz">مصرى</option><!-- Maṣrī -->
+                <option value="ms" lang="ms">Bahasa Melayu</option>
+                <option value="min" lang="min">Bahaso Minangkabau</option>
+                <option value="my" lang="my">မြန်မာဘာသာ</option><!-- Myanmarsar -->
+                <option value="nl" lang="nl">Nederlands</option>
+                <option value="ja" lang="ja">日本語</option><!-- Nihongo -->
+                <option value="no" lang="nb">Norsk (bokmål)</option>
+                <option value="nn" lang="nn">Norsk (nynorsk)</option>
+                <option value="ce" lang="ce">Нохчийн</option><!-- Noxçiyn -->
+                <option value="uz" lang="uz">Oʻzbekcha / Ўзбекча</option><!-- Oʻzbekcha -->
+                <option value="pt" lang="pt">Português</option>
+                <option value="kk" lang="kk">Қазақша / Qazaqşa / قازاقشا</option>
+                <option value="ro" lang="ro">Română</option><!-- Română -->
+                <option value="simple" lang="en">Simple English</option>
+                <option value="ceb" lang="ceb">Sinugboanong Binisaya</option>
+                <option value="sk" lang="sk">Slovenčina</option>
+                <option value="sl" lang="sl">Slovenščina</option>
+                <option value="sr" lang="sr">Српски / Srpski</option>
+                <option value="sh" lang="sh">Srpskohrvatski / Српскохрватски</option>
+                <option value="fi" lang="fi">Suomi</option><!-- suomi -->
+                <option value="sv" lang="sv">Svenska</option>
+                <option value="ta" lang="ta">தமிழ்</option><!-- Tamiḻ -->
+                <option value="tt" lang="tt">Татарча / Tatarça</option>
+                <option value="th" lang="th">ภาษาไทย</option><!-- Phasa Thai -->
+                <option value="tg" lang="tg">Тоҷикӣ</option><!-- Tojikī -->
+                <option value="azb" lang="azb">تۆرکجه</option><!-- Türkce -->
+                <option value="tr" lang="tr">Türkçe</option><!-- Türkçe -->
+                <option value="uk" lang="uk">Українська</option><!-- Ukrayins’ka -->
+                <option value="ur" lang="ur">اردو</option><!-- Urdu -->
+                <option value="vi" lang="vi">Tiếng Việt</option>
+                <option value="vo" lang="vo">Volapük</option>
+                <option value="war" lang="war">Winaray</option>
+                <option value="zh-yue" lang="yue">粵語</option><!-- Yuht Yúh / Jyut6 jyu5 -->
+                <option value="zh" lang="zh">中文</option><!-- Zhōngwén -->
+                <option value="ru" lang="ru">Русский</option><!-- Russkiy -->
             </select>
             <p class="note">Default target is German Wikipedia.</p>
           </td>

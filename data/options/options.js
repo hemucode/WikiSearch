@@ -27,6 +27,16 @@ background.receive("storageData", function (data) {
         background.send("TO", {"index": index, "value": value});
       }, false);
     }
+
+    var TOO = document.getElementById("TOO");
+    if (TOO) {
+      TOO.selectedIndex = data.toTypeIndex;
+      TOO.addEventListener("change", function (e) {
+        var index = e.target.selectedIndex;
+        var value = e.target[index].value;
+        background.send("TOO", {"index": index, "value": value});
+      }, false);
+    }
   }
 });
 
