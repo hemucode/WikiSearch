@@ -1,4 +1,85 @@
-.ex-body {
+/*body {
+  margin: 0;
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+body>* {
+  display: flex;
+  display: -webkit-flex;
+}
+
+body, table {
+  color: #333;
+  font-size: 12px;
+  font-family: arial, sans-serif;
+}
+*/
+table {
+  width: 500px;
+  margin: auto;
+  border-spacing: 1px;
+}
+
+input[type=checkbox] {
+  vertical-align: middle;
+}
+
+select {
+  width: 150px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+label>input {
+  vertical-align: middle;
+}
+
+#content {
+  width: 100%;
+  margin-right: 10px;
+  /*background-color: rgba(0,0,0,0.05);*/
+}
+
+#content>table>tbody>tr {
+  border-bottom: solid 1px #E5E5E5;
+}
+
+#content>table>tbody>tr>td {
+  padding: 7px;
+  background-color: rgba(0,0,0,0.05);
+}
+
+#content>table>tbody>tr>td:nth-child(1) {
+  width: 200px;
+  vertical-align: middle;
+}
+
+.left {
+  text-align: left;
+  width: 100px !important;
+}
+
+.flex {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+.note {
+  padding: 0;
+  font-size: 90%;
+  margin: 3px 0 0 0;
+  color: #707070 !important;
+}
+
+.spacer {
+  margin: 0;
+  height: 18px;
+}
+
+ex-body {
   width: 400px;
   margin: 10px;
   padding: 0px 0px 10px 0px;
@@ -22,6 +103,7 @@ html,body {
 #grids{
   display: grid;
   grid-template-columns: auto auto auto auto;
+  margin-bottom: 10px;
 }
 .btn {
   cursor: pointer;
@@ -40,7 +122,7 @@ html,body {
   margin-left: 5px;
 }
 .top-label {
-    background: #1e1d1d;
+    background: #e74a4a;
     color: white;
     font-family: sans-serif;
     font-size: 15px;
@@ -74,7 +156,7 @@ html,body {
   display: flex;
     align-items: stretch;
     padding: 0;
-    margin-bottom: 12px;
+    margin: 10px;
     background-color: #fff;
     border-radius: 4px;
     min-height: 36px;
@@ -89,7 +171,6 @@ html,body {
 }
 .cta-message{    
     font-size: 15px;
-    /* margin: 0px 0px 20px 0px; */
     margin: 0 0 0 8px;
     font-family: sans-serif;
     color: ;
