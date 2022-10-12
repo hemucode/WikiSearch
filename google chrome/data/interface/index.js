@@ -1,6 +1,7 @@
 domReady(() => {
   linkButton()
   hoverButton()
+  translateHTML()
 })
 
 function domReady (callback) {
@@ -11,6 +12,13 @@ function domReady (callback) {
   }
 }
 
+function translateHTML (dataKey = 'message') {
+  for (const $element of document.getElementsByTagName('*')) {
+    if ($element.dataset && $element.dataset[dataKey]) {
+      $element.innerText = chrome.i18n.getMessage($element.dataset[dataKey])
+    }
+  }
+}
 function linkButton() {
   document.querySelector('.teaser').href = `https://www.codehemu.com/2022/06/how-to-enable-right-click-of-microsoft.html`;
   document.querySelector('.youtube').href = `https://youtube.com/c/HemantaGayen`;
@@ -67,29 +75,52 @@ function headericons(){
     window.open("https://www.codehemu.com/2022/06/how-to-enable-right-click-of-microsoft.html#CSS2",'_blank');
 }
 
+
 var background = (function () {
-  var tmp = {};
-  if (chrome && chrome.runtime && chrome.runtime.onMessage) {
-    chrome.runtime.onMessage.addListener(function (request) {
-      for (var id in tmp) {
-        if (tmp[id] && (typeof tmp[id] === "function")) {
-          if (request.path === "background-to-popup") {
-            if (request.method === id) tmp[id](request.data);
-          }
+  var _tmp = {};
+  chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    for (var id in _tmp) {
+      if (_tmp[id] && (typeof _tmp[id] === "function")) {
+        if (request.path === 'background-to-options') {
+          if (request.method === id) _tmp[id](request.data);
         }
       }
-    });
-    /*  */
-    return {
-      "receive": function (id, callback) {tmp[id] = callback},
-      "send": function (id, data) {
-        chrome.runtime.sendMessage({"path": "popup-to-background", "method": id, "data": data});
-      }
     }
-  } else {
-    return {
-      "send": function () {},
-      "receive": function () {}
-    }
+  });
+  /*  */
+  return {
+    "receive": function (id, callback) {_tmp[id] = callback},
+    "send": function (id, data) {chrome.runtime.sendMessage({"path": 'options-to-background', "method": id, "data": data})}
   }
 })();
+
+background.receive("storageData", function (data) {
+  if (data) {
+    var TO = document.getElementById("TO");
+    if (TO) {
+      TO.selectedIndex = data.toIndex;
+      TO.addEventListener("change", function (e) {
+        var index = e.target.selectedIndex;
+        var value = e.target[index].value;
+        background.send("TO", {"index": index, "value": value});
+      }, false);
+    }
+
+    var TOO = document.getElementById("TOO");
+    if (TOO) {
+      TOO.selectedIndex = data.toTypeIndex;
+      TOO.addEventListener("change", function (e) {
+        var index = e.target.selectedIndex;
+        var value = e.target[index].value;
+        background.send("TOO", {"index": index, "value": value});
+      }, false);
+    }
+  }
+});
+
+var init = function () {
+  background.send("storageData");
+  window.removeEventListener("load", init, false);
+};
+
+window.addEventListener("load", init, false);
