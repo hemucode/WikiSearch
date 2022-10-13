@@ -1,0 +1,14 @@
+{
+   "app_description": {
+      "message": "Seleccione y busque en Wikipedia con el botón derecho del mouse."
+   },
+   "app_name": {
+      "message": "WikiSearch"
+   },
+   "rate": {
+      "message" :"Por favor ayúdenos y califíquenos"
+   },
+   "donate":{
+      "message" :"donación"
+   }
+}
