@@ -1,39 +1,15 @@
-/*body {
-  margin: 0;
-  align-items: center;
-  -webkit-align-items: center;
-}
-
-body>* {
-  display: flex;
-  display: -webkit-flex;
-}
-
-body, table {
-  color: #333;
-  font-size: 12px;
-  font-family: arial, sans-serif;
-}
-*/
 table {
   width: 500px;
   margin: auto;
   border-spacing: 1px;
 }
 
-input[type=checkbox] {
-  vertical-align: middle;
-}
 
 select {
   width: 150px;
   height: 25px;
-  vertical-align: middle;
 }
 
-label>input {
-  vertical-align: middle;
-}
 
 #content {
   width: 100%;
@@ -53,7 +29,6 @@ label>input {
 
 #content>table>tbody>tr>td:nth-child(1) {
   width: 200px;
-  vertical-align: middle;
 }
 
 .left {
